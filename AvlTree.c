@@ -4,6 +4,18 @@
 
 #define SPACE_FACTOR 10
 #define MAX(a, b) (((a)>(b))?(a):(b))
+typedef struct TreeNode {
+    void* obj;
+    int height;
+    int balance;
+    struct TreeNode *parent;
+    struct TreeNode *left;
+    struct TreeNode *right;
+} TreeNode;
+typedef struct AvlTree {
+    TreeNode *root;
+    getValFunc getVal;
+} AvlTree;
 
 
 AvlTree *createAvlTree(getValFunc getVal) {
